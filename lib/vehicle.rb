@@ -42,6 +42,10 @@ class Vehicle
     american_cars.include?(@make).&(self.age().<=(15))
   end
 
+  define_method(:id) do
+    @id 
+  end
+
   define_singleton_method(:find) do |identification|
     found_vehicle = nil
     @@vehicles.each() do |vehicle|

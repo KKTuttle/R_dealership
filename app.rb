@@ -3,20 +3,22 @@ require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/vehicle')
 require('./lib/dealership')
+require('pry')
+require('launchy')
 
 
 get('/') do
   erb(:index)
 end
 
-# get('/vehicles') do
-#   @vehicles = Vehicle.all()
-#   erb(:vehicles)
-# end
-#
-# get('/vehicles/new') do
-#   erb(:vehicles_form)
-# end
+get('/vehicles') do
+  @vehicles = Vehicle.all()
+  erb(:vehicles)
+end
+
+get('/vehicle/new') do
+  erb(:vehicles_form)
+end
 
 get('/dealerships/new') do
    erb(:dealerships_form)
